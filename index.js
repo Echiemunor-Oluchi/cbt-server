@@ -407,28 +407,6 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`
-╔═══════════════════════════════════════════════════════════╗
-║                                                           ║
-║   🏫 Lekki Peculiar Schools CBT Server                   ║
-║                                                           ║
-║   Server running on port ${PORT}                            ║
-║   API Base URL: http://localhost:${PORT}/api               ║
-║                                                           ║
-║   Endpoints:                                              ║
-║   • GET  /api/health           - Health check             ║
-║   • GET  /api/questions        - Get all questions        ║
-║   • POST /api/questions        - Add question             ║
-║   • POST /api/questions/bulk   - Bulk upload              ║
-║   • GET  /api/results          - Get all results          ║
-║   • POST /api/results          - Save result              ║
-║   • GET  /api/students         - Get all students         ║
-║   • POST /api/students/login   - Student login            ║
-║                                                           ║
-╚═══════════════════════════════════════════════════════════╝
-  `);
-});
 
 // DELETE all questions
 app.delete('/api/questions/all', async (req, res) => {
@@ -439,3 +417,9 @@ app.delete('/api/questions/all', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+EOF 
+git add .
