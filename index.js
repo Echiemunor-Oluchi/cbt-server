@@ -185,6 +185,16 @@ app.post('/api/questions/delete-many', async (req, res) => {
   }
 });
 
+// DELETE all questions
+app.delete('/api/questions/all', async (req, res) => {
+  try {
+    await Question.deleteMany({});
+    res.json({ message: 'All questions deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ═══════════════════════════════════════════════════════════════════
 // RESULTS ROUTES
 // ═══════════════════════════════════════════════════════════════════
@@ -418,4 +428,14 @@ app.listen(PORT, () => {
 ║                                                           ║
 ╚═══════════════════════════════════════════════════════════╝
   `);
+});
+
+// DELETE all questions
+app.delete('/api/questions/all', async (req, res) => {
+  try {
+    await Question.deleteMany({});
+    res.json({ message: 'All questions deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
