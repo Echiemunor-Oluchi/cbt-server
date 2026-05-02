@@ -421,5 +421,3 @@ app.delete('/api/questions/all', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-EOF 
-git add .
