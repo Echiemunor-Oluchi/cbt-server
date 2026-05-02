@@ -25,7 +25,7 @@ const questionSchema = new mongoose.Schema({
   section: {
     type: String,
     required: [true, 'Section is required'],
-    enum: ['elementary', 'college']
+    enum: ['elementary', 'college', 'entrance', 'vat']
   },
   year: {
     type: Number,
